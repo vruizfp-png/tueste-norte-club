@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Club Tueste Norte - Dashboard de Socios
 
-## Getting Started
+Aplicación web desarrollada como área de cliente y catálogo para **Club Tueste Norte**, construida con **Next.js 16 (App Router)**, **Turbopack** y **Tailwind CSS**.
 
-First, run the development server:
+## 🚀 Cómo arrancar el proyecto
 
-```bash
+Asegúrate de tener instalado [Node.js](https://nodejs.org/). Clona el repositorio y ejecuta los siguientes comandos en tu terminal:
+
+\`\`\`bash
+# 1. Instalar las dependencias
+npm install
+
+# 2. Iniciar el servidor de desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+La aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ☕ Fuente de Datos
+* **Elegida**: Archivo estático local en TypeScript ubicado en `data/cafes.ts`.
+* **Por qué**: Para esta fase del proyecto, el uso de un conjunto de datos local simulado permite un rendimiento inmediato, evita la necesidad de configurar bases de datos externas o APIs de terceros, y garantiza que el tipado estricto con TypeScript (`interface` / `type`) funcione de manera fluida en las rutas dinámicas y componentes.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Justificación de Componentes y Arquitectura
+* **App Router de Next.js**: Se ha empleado la estructura basada en carpetas dentro de `app/` para definir las rutas principales:
+  * `/` (Dashboard / Página principal de bienvenida)
+  * `/cafes` (Catálogo de cafés del mes)
+  * `/cafes/[slug]` (Ficha de detalle individual dinámica con manejo de `params` asíncronos)
+  * `/metodos` (Guías de extracción)
+  * `/blog` (Historias de origen)
+* **Server Components y Client Components**: Por defecto, las páginas de Next.js actúan como **Server Components**, lo que optimiza la carga inicial y el rendimiento de la aplicación al renderizar el catálogo y los detalles del servidor. Se han extraído elementos visuales reutilizables como la barra de navegación (`components/Navbar.tsx`) y las etiquetas de tueste (`components/EtiquetaTueste.tsx`) para mantener una arquitectura modular y limpia.
