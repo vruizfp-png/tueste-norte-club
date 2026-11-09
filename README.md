@@ -32,3 +32,23 @@ La aplicación estará disponible en [http://localhost:3000](http://localhost:30
   * `/metodos` (Guías de extracción)
   * `/blog` (Historias de origen)
 * **Server Components y Client Components**: Por defecto, las páginas de Next.js actúan como **Server Components**, lo que optimiza la carga inicial y el rendimiento de la aplicación al renderizar el catálogo y los detalles del servidor. Se han extraído elementos visuales reutilizables como la barra de navegación (`components/Navbar.tsx`) y las etiquetas de tueste (`components/EtiquetaTueste.tsx`) para mantener una arquitectura modular y limpia.
+
+🚀 Implementación - Semana 7: Catálogo y Suscripción Interactiva
+En esta fase del proyecto Tueste Norte, se ha ampliado la experiencia del usuario incorporando interactividad avanzada en el frontend y lógica del lado del servidor utilizando el App Router de Next.js.
+
+Características Añadidas:
+Catálogo de Cafés Interactivo (/cafes):
+
+Componente de cliente (BuscadorCafes) para filtrar el catálogo en tiempo real por nombre u origen.
+
+Tarjetas informativas con detalles de tueste, notas de cata y precios.
+
+Server Action de Suscripción (suscribirClub):
+
+Lógica ejecutada de forma segura en el servidor ('use server') para validar el correo electrónico del usuario y procesar la selección de su perfil de café preferido.
+
+Simulación de latencia de red y manejo de respuestas tipadas mediante interfaces (FormState).
+
+Formulario Dinámico con useActionState:
+
+Componente interactivo de cliente (FormularioSuscripcion) que gestiona los estados de carga (isPending) y muestra de manera reactiva mensajes de éxito o error sin recargar la página.
